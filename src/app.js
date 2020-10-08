@@ -76,7 +76,7 @@ function displayForecast(response) {
           forecast.weather[0].icon
         }@2x.png"
       />
-      <div class="weather-forecast-temperature">
+  <div class="weather-forecast-temperature">
         <strong>
           ${Math.round(forecast.main.temp_max)}°
         </strong>
@@ -93,7 +93,7 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},us&mode=xml&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
